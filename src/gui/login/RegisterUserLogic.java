@@ -1,5 +1,6 @@
 package gui.login;
 
+import database.Register;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import gui.sceneUtilities.SceneManager;
@@ -23,6 +24,8 @@ public class RegisterUserLogic {
 
         reg.getButton().setOnAction(e -> {System.out.println(validateAll());
             user.type=reg.getUserType();
+            if(validateAll())
+                Register.registerFunction(user);
         } );
 
 

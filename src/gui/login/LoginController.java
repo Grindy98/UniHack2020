@@ -32,5 +32,6 @@ public class LoginController {
     public void registerButtonClicked(ActionEvent actionEvent){
           Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
 
+
     }
 }

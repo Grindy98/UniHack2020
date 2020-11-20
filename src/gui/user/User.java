@@ -37,13 +37,23 @@ public class User {
         return tmp.toString();
     }
 
-    public static void setList(String tabelaJobs)
+
+    public void setList(String tabelaJobs)
     {
         StringTokenizer tokens = new StringTokenizer(tabelaJobs, "\n");
+        offeredJobs = new Services();
+        String temp;
         while (tokens.hasMoreTokens())
         {
-            System.out.println(tokens.nextToken());
-
+            temp = tokens.nextToken();
+            for(Services.Type t : Services.Type.values())
+            {
+                if (temp.compareTo(t.label)==0)
+                {
+                    offeredJobs.addService(t);
+                    break;
+                }
+            }
         }
     }
 }
