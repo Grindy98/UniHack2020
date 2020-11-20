@@ -10,12 +10,12 @@
     <children>
         <AnchorPane layoutX="525.0" layoutY="31.0" prefHeight="545.0" prefWidth="431.0" style="-fx-background-color: #051f85;">
             <children>
-                <TextField layoutX="80.0" layoutY="114.0" prefHeight="34.0" prefWidth="270.0" promptText="username">
+                <TextField fx:id="username" layoutX="80.0" layoutY="114.0" prefHeight="34.0" prefWidth="270.0" promptText="username">
                     <font>
                         <Font size="28.0" />
                     </font>
                 </TextField>
-                <PasswordField layoutX="80.0" layoutY="238.0" prefHeight="60.0" prefWidth="270.0" promptText="password">
+                <PasswordField fx:id="password" layoutX="80.0" layoutY="238.0" prefHeight="60.0" prefWidth="270.0" promptText="password">
                     <font>
                         <Font size="25.0" />
                     </font>
