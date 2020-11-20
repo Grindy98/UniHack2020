@@ -7,11 +7,11 @@
     </content>
     <orderEntry type="jdk" jdkName="openjdk-15" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="JavaFX 15" level="application" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="library" name="JavaFX 15" level="application" />
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/Downloads/sqljdbc_8.4/enu/mssql-jdbc-8.4.1.jre11.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Programming/Java/JDBC/sqljdbc_8.4/enu/mssql-jdbc-8.4.1.jre14.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
