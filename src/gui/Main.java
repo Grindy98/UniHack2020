@@ -1,6 +1,9 @@
 package gui;
 
+import gui.login.RegisterUserController;
+import gui.login.RegisterUserLogic;
 import gui.sceneUtilities.SceneManager;
+import gui.user.User;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,12 +24,19 @@ public class Main extends Application {
         SceneManager.getI();
 
         //Choose first appearing scene
+
         stage.setScene(SceneManager.getI().getScene(Type.LOGIN));
         stage.show();
+
+        RegisterUserLogic r = new RegisterUserLogic();
+
+
     }
 
     public static void main(String[] args){
+
         launch(args);
+
     }
 
     public static Main getI() {
@@ -36,4 +46,6 @@ public class Main extends Application {
     public void changeSceneOnMainStage(Type scene){
         stage.setScene(SceneManager.getI().getScene(scene));
     }
+
+
 }

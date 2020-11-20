@@ -16,7 +16,8 @@ public class LoginController {
 //        Main.getI().changeSceneOnMainStage(SceneManager.Type.LOGIN);
     }
 
-//    public void registerButtonClicked(ActionEvent actionEvent){ Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
-//
-//    }
+    public void registerButtonClicked(ActionEvent actionEvent){
+          Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
+
+    }
 }
