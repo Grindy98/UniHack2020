@@ -13,14 +13,11 @@ public class Services {
         MEDIC("medic"),
         PROFESOR("profesor");
         public final String label;
-        private Type(String it)
-        {
-            label=it;
+        private Type(String it) {
+            label = it;
         }
     };
     private List<Type> associateService;
-
-
 
     public Services()
     {
