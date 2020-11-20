@@ -25,7 +25,7 @@ public class LoginController {
         String user = username.getText();
         String pw = password.getText();
 
-        boolean check = LoginDB.checkLoginData(user, pw, User.getIp());
+        boolean check = LoginDB.checkLoginData(user, pw);
         System.out.println(check);
     }
 
