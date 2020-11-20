@@ -3,11 +3,14 @@ package gui.user;
 import gui.login.Services;
 
 import java.util.List;
+import java.util.StringTokenizer;
 
 
 public class User {
-    public enum Type{CLIENT,
+    public enum Type{
+        CLIENT,
         PROVIDER};
+
     public String firstName, lastName;
     public String pass;
     public String address;
@@ -32,6 +35,16 @@ public class User {
             tmp.append(it.label).append("\n");
 
         return tmp.toString();
+    }
+
+    public static void setList(String tabelaJobs)
+    {
+        StringTokenizer tokens = new StringTokenizer(tabelaJobs, "\n");
+        while (tokens.hasMoreTokens())
+        {
+            System.out.println(tokens.nextToken());
+
+        }
     }
 }
 

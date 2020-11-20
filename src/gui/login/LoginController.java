@@ -29,7 +29,8 @@ public class LoginController {
         System.out.println(check);
     }
 
-//    public void registerButtonClicked(ActionEvent actionEvent){ Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
-//
-//    }
+    public void registerButtonClicked(ActionEvent actionEvent){
+          Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
+
+    }
 }

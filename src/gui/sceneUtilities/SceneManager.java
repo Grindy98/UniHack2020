@@ -21,6 +21,7 @@ public class SceneManager {
 
     public enum Type {
         LOGIN,
+        REGISTER_USER
     }
 
     private static SceneManager instance = null;
@@ -32,6 +33,7 @@ public class SceneManager {
 
         // Add lines to have each enum covered
         sceneMap.put(Type.LOGIN, loadScene("/resources/login/login.fxml"));
+        sceneMap.put(Type.REGISTER_USER, loadScene("/resources/login/registerUser.fxml"));
 
         // Check that all enums have a loaded scene
         for(Type s : Type.values()) {

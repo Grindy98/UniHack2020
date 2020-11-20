@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="600.0" style="-fx-background-color: #303030;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.login.RegisterUserController">
+    <children>
+        <ScrollPane layoutX="356.0" layoutY="264.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background: #9b6a9e; -fx-background-color: #9b6a9e;">
+            <content>
+                <VBox fx:id="box" />
+            </content>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </ScrollPane>
+        <VBox layoutX="68.0" layoutY="193.0" prefHeight="385.0" prefWidth="253.0" spacing="5.0">
+            <children>
+                <TextField fx:id="t1" prefHeight="32.0" prefWidth="221.0" promptText="first name" />
+                <Label fx:id="l1" maxHeight="1.7976931348623157E308" prefHeight="29.0" prefWidth="243.0" textFill="#3ddd52" />
+                <TextField fx:id="t2" prefHeight="32.0" prefWidth="221.0" promptText="last name" />
+                <Label fx:id="l2" layoutX="10.0" layoutY="35.0" prefHeight="29.0" prefWidth="242.0" textFill="#3ddd52" />
+                <TextField fx:id="t3" prefHeight="32.0" prefWidth="221.0" promptText="pass" />
+                <Label fx:id="l3" layoutX="10.0" layoutY="78.0" prefHeight="28.0" prefWidth="240.0" textFill="#3ddd52" />
+                <TextField fx:id="t4" prefHeight="32.0" prefWidth="221.0" promptText="confirm pass" />
+                <Label fx:id="l4" layoutX="10.0" layoutY="121.0" prefHeight="29.0" prefWidth="240.0" textFill="#3ddd52" />
+                <TextField fx:id="t5" prefHeight="32.0" prefWidth="221.0" promptText="address" />
+                <Label fx:id="l5" layoutX="10.0" layoutY="163.0" prefHeight="31.0" prefWidth="241.0" textFill="#3ddd52" />
+                <TextField fx:id="t6" prefHeight="33.0" prefWidth="221.0" promptText="phone number" />
+                <Label fx:id="l6" layoutX="15.0" layoutY="259.0" prefHeight="37.0" prefWidth="243.0" textFill="#3ddd52" />
+                <TextField fx:id="t7" prefHeight="0.0" prefWidth="243.0" promptText="username" />
+                <Label fx:id="l7" prefHeight="73.0" prefWidth="236.0" textFill="#3ddd52" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </VBox>
+        <Button fx:id="submitButton" layoutX="233.0" layoutY="629.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="133.0" text="Submit" textFill="#9615db">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Button>
+        <Label layoutX="123.0" layoutY="62.0" prefHeight="49.0" prefWidth="395.0" text="How u wanna use the app?" textAlignment="CENTER" textFill="#9615db">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+        <Label fx:id="serviceLabel" layoutX="348.0" layoutY="193.0" prefHeight="56.0" prefWidth="240.0" text="What services do you offer?" textAlignment="CENTER" textFill="#9615db">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Button fx:id="goBack" layoutX="35.0" layoutY="654.0" mnemonicParsing="false" onAction="#goBackClicked" text="Back" textFill="#9615db" />
+        <RadioButton fx:id="userType1" layoutX="110.0" layoutY="119.0" mnemonicParsing="false" onAction="#clientClicked" prefHeight="29.0" prefWidth="119.0" selected="true" text="Client" textFill="#9615db">
+            <toggleGroup>
+                <ToggleGroup fx:id="userTypeGroup" />
+            </toggleGroup>
+         <font>
+            <Font size="19.0" />
+         </font>
+        </RadioButton>
+        <RadioButton fx:id="userType2" layoutX="315.0" layoutY="121.0" mnemonicParsing="false" onAction="#providerClicked" prefHeight="25.0" prefWidth="186.0" text="Service Provider" textFill="#9615db" toggleGroup="$userTypeGroup">
+         <font>
+            <Font size="19.0" />
+         </font></RadioButton>
+    </children>
+</AnchorPane>
