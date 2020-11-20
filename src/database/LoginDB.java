@@ -3,16 +3,17 @@ import java.sql.*;
 
 public class LoginDB {
 
+    public static final String serverIP = "79.118.4.205";
+
     /**
-     * @author Dragos Surugiu
      * @param username The username entered by the user
      * @param password The pw entered by the user
      * @return It returns a boolean value, true if the LoginData is correct
      * and false otherwise
      */
-    public static boolean checkLoginData(String username, String password, String ip) {
+    public static boolean checkLoginData(String username, String password) {
 
-        String connectionUrl = "jdbc:sqlserver://" + "79.118.4.205" + ":1433;"
+        String connectionUrl = "jdbc:sqlserver://" + serverIP + ":1433;"
                 + "database=LoginInformation;"
                 + "user=suru;"
                 + "password=1234;"
