@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="1105.0" style="-fx-background-color: #151936;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutX="643.0" layoutY="30.0" prefHeight="555.0" prefWidth="432.0" style="-fx-background-color: #515fc4;">
+            <children>
+                <JFXTextField focusColor="#9226d6" layoutX="86.0" layoutY="192.0" prefHeight="44.0" prefWidth="235.0" promptText="username" unFocusColor="#42d19d">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField focusColor="#9226d6" layoutX="86.0" layoutY="256.0" prefHeight="44.0" prefWidth="235.0" promptText="password" unFocusColor="#42d19d">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </JFXTextField>
+                <JFXButton layoutX="167.0" layoutY="350.0" ripplerFill="#fe7676" text="Log In" textFill="#300d0d">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </JFXButton>
+                <Label layoutX="133.0" layoutY="74.0" prefHeight="64.0" prefWidth="188.0" text="Welcome" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold Italic" size="40.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+
+        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+        <JFXButton buttonType="RAISED" layoutX="201.0" layoutY="159.0" prefHeight="70.0" prefWidth="215.0" ripplerFill="#13e1cc" text="SIGN UP" textAlignment="CENTER" textFill="#d60f5e">
+            <font>
+                <Font size="35.0" />
+            </font>
+        </JFXButton>
+    </children>
+</AnchorPane>
