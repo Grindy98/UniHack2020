@@ -12,7 +12,7 @@ public class LoginDB {
      */
     public static boolean checkLoginData(String username, String password, String ip) {
 
-        String connectionUrl = "jdbc:sqlserver://" + ip + ":1433;"
+        String connectionUrl = "jdbc:sqlserver://" + "79.118.4.205" + ":1433;"
                 + "database=LoginInformation;"
                 + "user=suru;"
                 + "password=1234;"
