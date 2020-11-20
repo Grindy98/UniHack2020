@@ -2,6 +2,9 @@ package gui.user;
 
 import gui.login.Services;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.List;
 
 
@@ -32,6 +35,27 @@ public class User {
             tmp.append(it.label).append("\n");
 
         return tmp.toString();
+    }
+
+    public static String getIp() {
+
+        String systemIpAddress = "";
+        try
+        {
+            URL url_name = new URL("http://bot.whatismyipaddress.com");
+
+            BufferedReader sc =
+                    new BufferedReader(new InputStreamReader(url_name.openStream()));
+
+            // reads system IPAddress
+            systemIpAddress  = sc.readLine().trim();
+        }
+        catch (Exception e)
+        {
+            systemIpAddress  = "ERROR";
+        }
+
+        return systemIpAddress;
     }
 }
 

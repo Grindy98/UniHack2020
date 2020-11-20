@@ -1,6 +1,8 @@
 package gui.login;
 
+import database.LoginDB;
 import gui.Main;
+import gui.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,7 +21,12 @@ public class LoginController {
 
 
     public void loginButtonClicked(ActionEvent actionEvent) {
-        
+
+        String user = username.getText();
+        String pw = password.getText();
+
+        boolean check = LoginDB.checkLoginData(user, pw, User.getIp());
+        System.out.println(check);
     }
 
 //    public void registerButtonClicked(ActionEvent actionEvent){ Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
