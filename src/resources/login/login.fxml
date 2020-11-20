@@ -6,17 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="981.0" style="-fx-background-color: #0d0845;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.login.LoginController">
     <children>
         <AnchorPane layoutX="525.0" layoutY="31.0" prefHeight="545.0" prefWidth="431.0" style="-fx-background-color: #051f85;">
             <children>
-                <TextField layoutX="80.0" layoutY="114.0" prefHeight="34.0" prefWidth="270.0" promptText="username">
+                <TextField fx:id="username" layoutX="80.0" layoutY="114.0" prefHeight="34.0" prefWidth="270.0" promptText="username">
                     <font>
                         <Font size="28.0" />
                     </font>
                 </TextField>
-                <PasswordField layoutX="80.0" layoutY="238.0" prefHeight="60.0" prefWidth="270.0" promptText="password">
+                <PasswordField fx:id="password" layoutX="80.0" layoutY="238.0" prefHeight="60.0" prefWidth="270.0" promptText="password">
                     <font>
                         <Font size="25.0" />
                     </font>
@@ -28,7 +27,7 @@
                 </Button>
             </children>
         </AnchorPane>
-        <Button fx:id="registerButton" layoutX="170.0" layoutY="261.0" mnemonicParsing="false"  prefHeight="73.0" prefWidth="212.0" text="Register">
+        <Button fx:id="registerButton" layoutX="170.0" layoutY="261.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="212.0" text="Register">
             <font>
                 <Font size="40.0" />
             </font>
