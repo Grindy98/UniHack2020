@@ -2,9 +2,6 @@ package gui.user;
 
 import gui.login.Services;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.List;
 
 
