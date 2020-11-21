@@ -1,5 +1,6 @@
 package gui.user;
 
+import database.GetCityUser;
 import gui.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,13 +55,6 @@ public class UserController {
             accSetClicked();
         }));
 
-        //we should initialize the name and address using a query to the database
-        userName.setText("John Green");
-        userRole.setText("Client/Provider");
-
-        //we should initialize the cityLabel also using a query to the database
-        cityLabel.setText("New York");
-
         listManager = new ArrayList<>();
         addListElement(new ListElementLogic(anchorPane));
         addListElement(new ListElementLogic(anchorPane));
@@ -99,6 +93,7 @@ public class UserController {
     }
 
     private void accSetClicked(){
+        //we want a new window, so we instantiate a stage and use the FXMLLoader
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/resources/user/accountSettings.fxml"));
@@ -110,6 +105,19 @@ public class UserController {
             e.printStackTrace();
             throw new RuntimeException();
         }
+
+        //get the controller so we can initialize some fields
+        AccountSettingsController settingsController = loader.getController();
+
+        //get user instance so we can initialize the settings window
+        User userInst = GetCityUser.getUserByUsername(userName.getText());
+
+        //set the prompt texts
+        settingsController.setUserNameLabel(userInst.username);
+        settingsController.setFirstNamePrompt(userInst.firstName);
+        settingsController.setNameTextFieldPrompt(userInst.lastName);
+        settingsController.setCityTextFieldPrompt(userInst.address);
+        settingsController.setPhoneTextField(userInst.nr);
 
         stage.setTitle("Account settings");
         Scene scene = new Scene(settingsRoot, 600, 600);

@@ -45,7 +45,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <Label text="Label">
+                        <Label fx:id="userNameLabel" text="Label">
                             <font>
                                 <Font size="16.0" />
                             </font>
@@ -54,7 +54,7 @@
                 </HBox>
                 <TextField fx:id="firstNameTextField" prefHeight="27.0" prefWidth="196.0" />
                 <TextField fx:id="nameTextField" />
-                <TextField fx:id="addressTextField" />
+                <TextField fx:id="cityTextField" />
                 <TextField fx:id="phoneTextField" />
             </children>
         </VBox>
@@ -62,10 +62,10 @@
         <VBox alignment="CENTER" prefHeight="400.0" prefWidth="141.0" spacing="30.0">
             <children>
                 <Region prefHeight="25.0" prefWidth="107.0" />
-                <Button mnemonicParsing="false" text="Update first name" />
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update name" />
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Update city" />
-                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update phone" />
+                <Button fx:id="updateFirstNameButton" mnemonicParsing="false" text="Update first name" />
+                <Button fx:id="updateNameButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update name" />
+                <Button fx:id="updateCityButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Update city" />
+                <Button fx:id="updatePhoneButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update phone" />
             </children>
         </VBox>
         <Region prefHeight="400.0" prefWidth="132.0" HBox.hgrow="ALWAYS" />
