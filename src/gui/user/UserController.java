@@ -108,17 +108,17 @@ public class UserController {
 
         //get the controller so we can initialize some fields
         AccountSettingsController settingsController = loader.getController();
-        //AccountSettingsLogic settingsLogic = new AccountSettingsLogic(settingsController);
+        AccountSettingsLogic settingsLogic = new AccountSettingsLogic(settingsController);
 
         //get user instance so we can initialize the settings window
         User userInst = GetCityUser.getUserByUsername(userName.getText());
 
         //set the prompt texts
         settingsController.setUserNameLabel(userInst.username);
-        settingsController.setFirstNamePrompt(userInst.firstName);
-        settingsController.setNameTextFieldPrompt(userInst.lastName);
-        settingsController.setCityTextFieldPrompt(userInst.address);
-        settingsController.setPhoneTextField(userInst.nr);
+        settingsController.getFirstNameTextField().setText(userInst.firstName);
+        settingsController.getLastNameTextField().setText(userInst.lastName);
+        settingsController.getCityComboBox().setValue(userInst.address);
+        settingsController.getPhoneTextField().setText(userInst.nr);
 
         stage.setTitle("Account settings");
         Scene scene = new Scene(settingsRoot, 600, 600);
