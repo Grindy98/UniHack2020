@@ -36,21 +36,16 @@ public class LoginController {
         boolean check = LoginDB.checkLoginData(user, pw);
         User userInst = GetCityUser.getUserByUsername(user);
 
-        if(check){
+        if (check){
             ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(userInst.username);
             ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setCityLabel(userInst.address);
             ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setRoleLabel(getTypeAsString(userInst.type));
-            fill_services(userInst.address);
-
-            System.out.println(userInst.address + " " + getTypeAsString(userInst.type));
+            fill_services(userInst.address, userInst.type);
             Main.getI().changeSceneOnMainStage(SceneManager.Type.USER);
-
         }
-
-        System.out.println(check);
     }
 
-    public void fill_services(String city) {
+    public void fill_services(String city, gui.user.User.Type type) {
         String connectionUrl = "jdbc:sqlserver://" + serverIP + ":1433;"
                 + "database=LoginInformation;"
                 + "user=suru;"
@@ -59,46 +54,47 @@ public class LoginController {
                 + "trustServerCertificate=true;"
                 + "loginTimeout=30;";
 
-        try(
+        try (
                 Connection conn = DriverManager.getConnection(connectionUrl);
                 Statement stmt = conn.createStatement();
-        ){
-            String selectStr = "select * " +
+        ) {
+            String selectStr;
+            if (type == User.Type.CLIENT)
+                selectStr = "select * " +
                     "from [LoginInformation]" + " where city like '" +
                     city + "' and userType like '1'";
+            else
+                selectStr = "select * " +
+                        "from [LoginInformation]" + " where city like '" +
+                        city + "' and userType like '0'";
             ResultSet res = stmt.executeQuery(selectStr);
             int i;
             ArrayList<String> list_username = new ArrayList<String>();
             while(res.next()) {
                 list_username.add(res.getString("loginID"));
-//                String services = res.getString("services");
-//                ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setlistelement(firstname, services);
-
             }
             for (i = 0; i < list_username.size(); i++) {
                 User new_user = GetCityUser.getUserByUsername(list_username.get(i));
                 List<Services.Type> service = new_user.serviceList.getAssociateService();
-                for(Services.Type var : service) {
+                for (Services.Type var : service) {
                     ((UserController) SceneManager.getI().getController(SceneManager.Type.USER)).addNewElement(new_user, var);
                 }
             }
-        }catch(SQLException e) {
+        } catch(SQLException e) {
             e.printStackTrace();
         }
     }
 
     public String getTypeAsString(User.Type type){
-        if(type == User.Type.CLIENT){
+        if (type == User.Type.CLIENT) {
             return "Client";
         }
-        else{
+        else {
             return "Provider";
         }
     }
 
     public void registerButtonClicked(ActionEvent actionEvent){
           Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
-
-
     }
 }

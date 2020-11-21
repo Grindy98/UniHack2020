@@ -12,9 +12,9 @@ import java.util.StringTokenizer;
 public class User {
 
     public static final ArrayList<String> cities = new ArrayList<>(Arrays.asList(
-            "citi1",
-            "citi2",
-            "city3"));
+            "Timisoara",
+            "Resita",
+            "Lugoj"));
 
     public enum Type{
         CLIENT,
