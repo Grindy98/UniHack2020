@@ -33,6 +33,12 @@ public class LoginController {
         return userInst;
     }
 
+    private void reset()
+    {
+        password.clear();
+        username.clear();
+    }
+
     public void loginButtonClicked(ActionEvent actionEvent) {
 
         String user = username.getText();
@@ -108,5 +114,6 @@ public class LoginController {
 
     public void registerButtonClicked(ActionEvent actionEvent){
           Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
+          reset();
     }
 }

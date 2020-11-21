@@ -21,6 +21,7 @@ public class RegisterUserController<serviceBoxes> {
 
     public void goBackClicked(ActionEvent actionEvent){
         Main.getI().changeSceneOnMainStage(SceneManager.Type.LOGIN);
+        reset();
     }
 
     @FXML
@@ -50,6 +51,22 @@ public class RegisterUserController<serviceBoxes> {
     public Button getButton() {
         return submitButton;
     }
+
+    private void reset()
+    {
+        for (TextSelect t : TextSelect.values())
+        {
+            getTextField(t).clear();
+            getLabelField(t).setText("");
+        }
+        cityComboBox.setValue("");
+        userType1.setSelected(true);
+
+        for (var it : Services.Type.values())
+        {
+            arrMap.get(it).setSelected(false);
+        }
+  }
 
     public TextField getTextField(TextSelect t)
     {
