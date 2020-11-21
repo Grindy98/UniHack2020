@@ -28,6 +28,7 @@ public class Main extends Application {
         //Choose first appearing scene
 
         stage.setScene(SceneManager.getI().getScene(Type.LOGIN));
+        stage.setResizable(false);
         stage.show();
 
         RegisterUserLogic r = new RegisterUserLogic();
