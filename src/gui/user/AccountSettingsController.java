@@ -89,4 +89,10 @@ public class AccountSettingsController {
     public ComboBox<String> getCityComboBox(){
         return cityComboBox;
     }
+
+    public void reset(){
+        firstNameWarning.setText("");
+        lastNameWarning.setText("");
+        phoneWarning.setText("");
+    }
 }
