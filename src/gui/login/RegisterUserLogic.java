@@ -9,7 +9,6 @@ import gui.user.User;
 
 import java.util.EnumMap;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class RegisterUserLogic {
     public enum ValidateReturn{
