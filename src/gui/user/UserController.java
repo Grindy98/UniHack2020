@@ -89,6 +89,7 @@ public class UserController {
     }
 
     public void logoutButtonClicked(){
+        reset();
         Main.getI().changeSceneOnMainStage(SceneManager.Type.LOGIN);
     }
 
