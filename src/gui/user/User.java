@@ -26,6 +26,13 @@ public class User {
             return 1;
     }
 
+    public Type getType_2(String str) {
+        if(str.equals("0"))
+            return Type.CLIENT;
+        else
+            return Type.PROVIDER;
+    }
+
     public String getServices() {
 
         StringBuilder tmp = new StringBuilder();

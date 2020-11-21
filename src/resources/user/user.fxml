@@ -27,7 +27,7 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <Label fx:id="addressLabel" text="Address:">
+                        <Label fx:id="roleLabel" text="Role:">
                             <font>
                                 <Font size="20.0" />
                             </font>
@@ -41,7 +41,7 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <Label fx:id="userAddress" text="AddressLabel">
+                        <Label fx:id="userRole" text="RoleLabel">
                             <font>
                                 <Font size="20.0" />
                             </font>

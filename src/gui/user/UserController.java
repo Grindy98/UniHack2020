@@ -34,14 +34,13 @@ public class UserController {
     @FXML
     private Label nameLabel;
     @FXML
-    private Label addressLabel;
+    private Label roleLabel;
     @FXML
     private Label userName;
     @FXML
-    private Label userAddress;
+    private Label userRole;
     @FXML
     private HBox borderTop;
-
     @FXML
     private Label cityLabel;
 
@@ -50,18 +49,14 @@ public class UserController {
     @FXML
     public void initialize(){
 
-        // Set Log out button behaviour
-        //logoutButton.setOnAction(e -> {
-            //SceneManager.getI().loadScene(SceneManager.Type.LOGIN);
-       // });
-        // Set AccSetButton behaviour
+        //set the behaviour for the account settings button
         accSetButton.setOnAction((e -> {
             accSetClicked();
         }));
 
         //we should initialize the name and address using a query to the database
         userName.setText("John Green");
-        userAddress.setText("street 1, New York");
+        userRole.setText("Client/Provider");
 
         //we should initialize the cityLabel also using a query to the database
         cityLabel.setText("New York");
@@ -79,6 +74,10 @@ public class UserController {
     public void setUserName(String userName) {
         this.userName.setText(userName);
     }
+
+    public void setCityLabel(String cityLabel) {this.cityLabel.setText(cityLabel);}
+
+    public void setRoleLabel(String userRole) {this.userRole.setText(userRole);}
 
     private void addListElement(ListElementLogic elem){
         listManager.add(elem);

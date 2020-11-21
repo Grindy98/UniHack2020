@@ -1,5 +1,6 @@
 package gui.login;
 
+import database.GetCityUser;
 import database.LoginDB;
 import gui.Main;
 import gui.user.User;
@@ -27,15 +28,29 @@ public class LoginController {
         String pw = password.getText();
 
         boolean check = LoginDB.checkLoginData(user, pw);
+        User userInst = GetCityUser.getUserByUsername(user);
 
         if(check){
-            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(user);
+            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(userInst.username);
+            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setCityLabel(userInst.address);
+            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setRoleLabel(getTypeAsString(userInst.type));
+
+            System.out.println(userInst.address + " " + getTypeAsString(userInst.type));
 
             Main.getI().changeSceneOnMainStage(SceneManager.Type.USER);
 
         }
 
         System.out.println(check);
+    }
+
+    public String getTypeAsString(User.Type type){
+        if(type == User.Type.CLIENT){
+            return "Client";
+        }
+        else{
+            return "Provider";
+        }
     }
 
     public void registerButtonClicked(ActionEvent actionEvent){
