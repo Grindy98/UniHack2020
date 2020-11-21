@@ -13,9 +13,9 @@ import javafx.scene.text.Font;
 
 import java.util.EnumMap;
 
-enum TextSelect {T1, T2, T3, T4, T5, T6, T7};
 
 public class RegisterUserController<serviceBoxes> {
+    enum TextSelect {T1, T2, T3, T4, T5, T6, T7};
 
     public void goBackClicked(ActionEvent actionEvent){
         Main.getI().changeSceneOnMainStage(SceneManager.Type.LOGIN);
@@ -70,14 +70,19 @@ public class RegisterUserController<serviceBoxes> {
             case T7 -> l7;
         };
     }
-    public void setTextFieldEmpty(TextSelect t)
-    {
-        getTextField(t).clear();
-    }
-
     public void setTextLabel(TextSelect t, String message){
         Label l =getLabelField(t);
         l.setText(message);
+    }
+
+    public void setTextErrorLabel(TextSelect t, RegisterUserLogic.ValidateReturn errorFlag){
+        switch (errorFlag){
+            case EMPTY -> setTextLabel(t, "Field cannot be empty.");
+            case VALID -> setTextLabel(t, "");
+            case TOO_SHORT -> setTextLabel(t, "Field is too short.");
+            case TOO_LONG -> setTextLabel(t, "Field is too long.");
+            case INVALID_CHARACTERS -> setTextLabel(t, "Field contains invalid characters.");
+        }
     }
 
     @FXML
@@ -121,4 +126,5 @@ public class RegisterUserController<serviceBoxes> {
         }
         box.getChildren().setAll(arrMap.values());
     }
+
 }

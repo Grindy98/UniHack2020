@@ -15,9 +15,11 @@ public class User {
     public String pass;
     public String address;
     public String nr;
-    public Services offeredJobs;
+    public Services serviceList;
     public Type type;
     public String username;
+
+
 
     public int getType() {
         if(type == Type.CLIENT)
@@ -29,7 +31,7 @@ public class User {
     public String getServices() {
 
         StringBuilder tmp = new StringBuilder();
-        List<Services.Type> associateList = offeredJobs.getAssociateService();
+        List<Services.Type> associateList = serviceList.getAssociateService();
 
         for(Services.Type it: associateList)
             tmp.append(it.label).append("\n");
@@ -41,7 +43,7 @@ public class User {
     public void setList(String tabelaJobs)
     {
         StringTokenizer tokens = new StringTokenizer(tabelaJobs, "\n");
-        offeredJobs = new Services();
+        serviceList = new Services();
         String temp;
         while (tokens.hasMoreTokens())
         {
@@ -50,7 +52,7 @@ public class User {
             {
                 if (temp.compareTo(t.label)==0)
                 {
-                    offeredJobs.addService(t);
+                    serviceList.addService(t);
                     break;
                 }
             }
