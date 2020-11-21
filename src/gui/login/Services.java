@@ -39,5 +39,11 @@ public class Services {
         associateService.remove(t);
     }
 
+    public String toString() {
+        String aux = "";
+        aux = getAssociateService().toString();
+        aux = aux.substring(1, aux.length() - 1);
+        return aux;
+    }
 
 }

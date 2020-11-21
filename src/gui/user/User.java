@@ -8,7 +8,14 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 
+
 public class User {
+
+    public static final ArrayList<String> cities = new ArrayList<>(Arrays.asList(
+            "Timisoara",
+            "Resita",
+            "Lugoj"));
+
     public enum Type{
         CLIENT,
         PROVIDER};

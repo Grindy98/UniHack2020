@@ -37,7 +37,8 @@
                 <Label text="Name:" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                     <font>
                         <Font size="15.0" />
-                    </font></Label>
+                    </font>
+            </Label>
                 <Label text="Service:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <font>
                         <Font size="15.0" />
@@ -45,7 +46,8 @@
                 <Label fx:id="nameLabel" text="name" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                     <font>
                         <Font size="15.0" />
-                    </font></Label>
+                    </font>
+            </Label>
                 <Label fx:id="serviceLabel" text="service" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                     <font>
                         <Font size="15.0" />

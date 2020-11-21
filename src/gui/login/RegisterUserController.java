@@ -101,6 +101,13 @@ public class RegisterUserController<serviceBoxes> {
     }
 
     @FXML
+    private ComboBox comboBox;
+
+    public ComboBox getComboBox() {
+        return comboBox;
+    }
+
+    @FXML
     public void initialize() {
         buildCheckBox();
         l1.setWrapText(true);

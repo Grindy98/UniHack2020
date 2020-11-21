@@ -25,7 +25,6 @@ public class RegisterUserLogic {
         LAST_NAME,
         USERNAME,
         PASSWORD,
-        ADDRESS,
         PHONE_NUMBER,
     }
 
@@ -63,6 +62,8 @@ public class RegisterUserLogic {
                     user.type=reg.getUserType();
                     Register.registerFunction(user);
                 }
+
+                System.out.println(user.address);
         } );
 
 
@@ -78,6 +79,14 @@ public class RegisterUserLogic {
                 System.out.println(user.serviceList.getAssociateService());
             });
         }
+
+        reg.getComboBox().valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue observableValue, String t, String t1) {
+                user.address=t1;
+            }
+        });
+
     }
 
     public boolean validateAll(){
@@ -106,8 +115,6 @@ public class RegisterUserLogic {
             case FIRST_NAME:
             case LAST_NAME:
                 return validateName(str);
-            case ADDRESS:
-                return validateAddress(str);
             case PASSWORD:
                 return validatePass(str);
             case USERNAME:
