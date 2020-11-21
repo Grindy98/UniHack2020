@@ -2,6 +2,8 @@ package gui.user;
 
 import gui.login.Services;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -11,13 +13,20 @@ public class User {
         CLIENT,
         PROVIDER};
 
+    public static final ArrayList<String> cities = new ArrayList<>(Arrays.asList(
+            "citi1",
+            "citi2",
+            "city3"));
+
     public String firstName, lastName;
     public String pass;
     public String address;
     public String nr;
-    public Services offeredJobs;
+    public Services serviceList;
     public Type type;
     public String username;
+
+
 
     public int getType() {
         if(type == Type.CLIENT)
@@ -26,10 +35,17 @@ public class User {
             return 1;
     }
 
+    public Type getType_2(String str) {
+        if(str.equals("0"))
+            return Type.CLIENT;
+        else
+            return Type.PROVIDER;
+    }
+
     public String getServices() {
 
         StringBuilder tmp = new StringBuilder();
-        List<Services.Type> associateList = offeredJobs.getAssociateService();
+        List<Services.Type> associateList = serviceList.getAssociateService();
 
         for(Services.Type it: associateList)
             tmp.append(it.label).append("\n");
@@ -41,7 +57,7 @@ public class User {
     public void setList(String tabelaJobs)
     {
         StringTokenizer tokens = new StringTokenizer(tabelaJobs, "\n");
-        offeredJobs = new Services();
+        serviceList = new Services();
         String temp;
         while (tokens.hasMoreTokens())
         {
@@ -50,7 +66,7 @@ public class User {
             {
                 if (temp.compareTo(t.label)==0)
                 {
-                    offeredJobs.addService(t);
+                    serviceList.addService(t);
                     break;
                 }
             }

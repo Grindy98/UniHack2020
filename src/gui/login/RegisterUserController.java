@@ -1,6 +1,8 @@
 package gui.login;
 
 import gui.Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -13,9 +15,9 @@ import javafx.scene.text.Font;
 
 import java.util.EnumMap;
 
-enum TextSelect {T1, T2, T3, T4, T5, T6, T7};
 
 public class RegisterUserController<serviceBoxes> {
+    enum TextSelect {T1, T2, T3, T4, T6, T7};
 
     public void goBackClicked(ActionEvent actionEvent){
         Main.getI().changeSceneOnMainStage(SceneManager.Type.LOGIN);
@@ -25,13 +27,16 @@ public class RegisterUserController<serviceBoxes> {
     private Button goBack;
 
     @FXML
+    private ComboBox<String> cityComboBox;
+
+    @FXML
     private RadioButton userType1, userType2;
 
     @FXML
     private Label serviceLabel;
 
     @FXML
-    private Label l1, l2, l3, l4, l5, l6, l7;
+    private Label l1, l2, l3, l4, l6, l7;
 
     public User.Type getUserType() {
         if(userType1.isSelected())
@@ -53,7 +58,6 @@ public class RegisterUserController<serviceBoxes> {
             case T2 -> t2;
             case T3 -> t3;
             case T4 -> t4;
-            case T5 -> t5;
             case T6 -> t6;
             case T7 -> t7;
         };
@@ -65,23 +69,27 @@ public class RegisterUserController<serviceBoxes> {
             case T2 -> l2;
             case T3 -> l3;
             case T4 -> l4;
-            case T5 -> l5;
             case T6 -> l6;
             case T7 -> l7;
         };
     }
-    public void setTextFieldEmpty(TextSelect t)
-    {
-        getTextField(t).clear();
-    }
-
     public void setTextLabel(TextSelect t, String message){
         Label l =getLabelField(t);
         l.setText(message);
     }
 
+    public static String getTextErrorLabel(RegisterUserLogic.ValidateReturn errorFlag){
+        return switch (errorFlag){
+            case EMPTY -> "Field cannot be empty.";
+            case VALID -> "";
+            case TOO_SHORT -> "Field is too short.";
+            case TOO_LONG -> "Field is too long.";
+            case INVALID_CHARACTERS -> "Field contains invalid characters.";
+        };
+    }
+
     @FXML
-    private TextField t1, t2, t3, t4, t5, t6, t7;
+    private TextField t1, t2, t3, t4, t6, t7;
 
     @FXML
     private VBox box;
@@ -97,6 +105,11 @@ public class RegisterUserController<serviceBoxes> {
         buildCheckBox();
         l1.setWrapText(true);
         serviceLabel.setWrapText(true);
+
+        ObservableList<String> options =
+                FXCollections.observableArrayList(User.cities);
+        cityComboBox.setItems(options);
+        cityComboBox.setValue(options.get(0));
     }
 
     public void clientClicked(ActionEvent actionEvent)
@@ -121,4 +134,9 @@ public class RegisterUserController<serviceBoxes> {
         }
         box.getChildren().setAll(arrMap.values());
     }
+
+    public ComboBox<String> getCity(){
+        return cityComboBox;
+    }
+
 }

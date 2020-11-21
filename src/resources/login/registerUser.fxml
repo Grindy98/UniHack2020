@@ -2,12 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -23,20 +25,20 @@
         </ScrollPane>
         <VBox layoutX="68.0" layoutY="193.0" prefHeight="385.0" prefWidth="253.0" spacing="5.0">
             <children>
-                <TextField fx:id="t1" prefHeight="32.0" prefWidth="221.0" promptText="first name" />
-                <Label fx:id="l1" maxHeight="1.7976931348623157E308" prefHeight="29.0" prefWidth="243.0" textFill="#3ddd52" />
-                <TextField fx:id="t2" prefHeight="32.0" prefWidth="221.0" promptText="last name" />
-                <Label fx:id="l2" layoutX="10.0" layoutY="35.0" prefHeight="29.0" prefWidth="242.0" textFill="#3ddd52" />
-                <TextField fx:id="t3" prefHeight="32.0" prefWidth="221.0" promptText="pass" />
-                <Label fx:id="l3" layoutX="10.0" layoutY="78.0" prefHeight="28.0" prefWidth="240.0" textFill="#3ddd52" />
-                <TextField fx:id="t4" prefHeight="32.0" prefWidth="221.0" promptText="confirm pass" />
-                <Label fx:id="l4" layoutX="10.0" layoutY="121.0" prefHeight="29.0" prefWidth="240.0" textFill="#3ddd52" />
-                <TextField fx:id="t5" prefHeight="32.0" prefWidth="221.0" promptText="address" />
-                <Label fx:id="l5" layoutX="10.0" layoutY="163.0" prefHeight="31.0" prefWidth="241.0" textFill="#3ddd52" />
-                <TextField fx:id="t6" prefHeight="33.0" prefWidth="221.0" promptText="phone number" />
-                <Label fx:id="l6" layoutX="15.0" layoutY="259.0" prefHeight="37.0" prefWidth="243.0" textFill="#3ddd52" />
-                <TextField fx:id="t7" prefHeight="0.0" prefWidth="243.0" promptText="username" />
-                <Label fx:id="l7" prefHeight="73.0" prefWidth="236.0" textFill="#3ddd52" />
+                <TextField fx:id="t1" prefHeight="50.0" prefWidth="221.0" promptText="first name" />
+                <Label fx:id="l1" maxHeight="1.7976931348623157E308" prefHeight="50.0" prefWidth="243.0" textFill="#3ddd52" />
+                <TextField fx:id="t2" prefHeight="50.0" prefWidth="221.0" promptText="last name" />
+                <Label fx:id="l2" layoutX="10.0" layoutY="35.0" prefHeight="50.0" prefWidth="242.0" textFill="#3ddd52" />
+                <TextField fx:id="t3" prefHeight="50.0" prefWidth="221.0" promptText="pass" />
+                <Label fx:id="l3" layoutX="10.0" layoutY="78.0" prefHeight="50.0" prefWidth="240.0" textFill="#3ddd52" />
+                <TextField fx:id="t4" prefHeight="50.0" prefWidth="221.0" promptText="confirm pass" />
+                <Label fx:id="l4" layoutX="10.0" layoutY="121.0" prefHeight="50.0" prefWidth="240.0" textFill="#3ddd52" />
+            <ComboBox fx:id="cityComboBox" prefHeight="50.0" prefWidth="251.0" promptText="city" />
+            <Region prefHeight="50.0" prefWidth="244.0" />
+                <TextField fx:id="t6" prefHeight="50.0" prefWidth="221.0" promptText="phone number" />
+                <Label fx:id="l6" layoutX="15.0" layoutY="259.0" prefHeight="50.0" prefWidth="243.0" textFill="#3ddd52" />
+                <TextField fx:id="t7" prefHeight="50.0" prefWidth="243.0" promptText="username" />
+                <Label fx:id="l7" prefHeight="50.0" prefWidth="236.0" textFill="#3ddd52" />
             </children>
             <opaqueInsets>
                 <Insets />
