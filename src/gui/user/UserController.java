@@ -2,6 +2,7 @@ package gui.user;
 
 import database.GetCityUser;
 import gui.Main;
+import gui.login.LoginController;
 import gui.login.Services;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -105,9 +106,9 @@ public class UserController {
         AccountSettingsController settingsController = loader.getController();
         AccountSettingsLogic settingsLogic = new AccountSettingsLogic(settingsController);
 
-        //get user instance so we can initialize the settings window
-        User userInst = GetCityUser.getUserByUsername(userName.getText());
-
+        //get the user info so we can set the prompts
+        User userInst = ((LoginController)SceneManager.getI().getController(SceneManager.Type.LOGIN)).getUserInst();
+        
         //set the prompt texts
         settingsController.setUserNameLabel(userInst.username);
         settingsController.getFirstNameTextField().setText(userInst.firstName);
