@@ -2,6 +2,7 @@ package gui.login;
 
 import database.GetCityUser;
 import database.LoginDB;
+import database.UserExistence;
 import gui.Main;
 import gui.user.User;
 import gui.user.UserController;
@@ -45,6 +46,7 @@ public class LoginController {
             fill_services(userInst.address, userInst.type);
             Main.getI().changeSceneOnMainStage(SceneManager.Type.USER);
         }
+        
     }
 
     public void fill_services(String city, gui.user.User.Type type) {
