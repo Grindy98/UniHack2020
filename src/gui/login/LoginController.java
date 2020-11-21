@@ -27,6 +27,11 @@ public class LoginController {
     @FXML
     private PasswordField password;
 
+    private User userInst;
+
+    public User getUserInst() {
+        return userInst;
+    }
 
     public void loginButtonClicked(ActionEvent actionEvent) {
 
@@ -34,7 +39,9 @@ public class LoginController {
         String pw = password.getText();
 
         boolean check = LoginDB.checkLoginData(user, pw);
-        User userInst = GetCityUser.getUserByUsername(user);
+
+        //get the info for the given username
+        userInst = GetCityUser.getUserByUsername(user);
 
         if (check == false) {
             Alert a = new Alert(Alert.AlertType.ERROR, "User or password incorrect");

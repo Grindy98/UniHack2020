@@ -44,6 +44,8 @@ public class RegisterUserLogic {
         reg = SceneManager.getI().getController(SceneManager.Type.REGISTER_USER);
         user.serviceList = new Services();
 
+        user.address = (String) reg.getCity().getValue();
+
         reg.getCity().valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue observableValue, String t, String t1) {
@@ -62,8 +64,6 @@ public class RegisterUserLogic {
                     user.type=reg.getUserType();
                     Register.registerFunction(user);
                 }
-
-                System.out.println(user.address);
         } );
 
 
@@ -79,14 +79,6 @@ public class RegisterUserLogic {
                 System.out.println(user.serviceList.getAssociateService());
             });
         }
-
-        reg.getComboBox().valueProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue observableValue, String t, String t1) {
-                user.address=t1;
-            }
-        });
-
     }
 
     public boolean validateAll(){
