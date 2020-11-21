@@ -1,6 +1,8 @@
 package gui.login;
 
 import gui.Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -98,10 +100,21 @@ public class RegisterUserController<serviceBoxes> {
     }
 
     @FXML
+    private ComboBox comboBox;
+
+    public ComboBox getComboBox() {
+        return comboBox;
+    }
+
+    @FXML
     public void initialize() {
         buildCheckBox();
         l1.setWrapText(true);
         serviceLabel.setWrapText(true);
+
+        ObservableList<String> options =
+                FXCollections.observableArrayList(User.cities);
+        comboBox.setItems(options);
     }
 
     public void clientClicked(ActionEvent actionEvent)

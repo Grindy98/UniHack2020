@@ -1,6 +1,8 @@
 package gui.login;
 
 import database.Register;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.CheckBox;
 import gui.sceneUtilities.SceneManager;
 import gui.user.User;
@@ -23,7 +25,6 @@ public class RegisterUserLogic {
         LAST_NAME,
         USERNAME,
         PASSWORD,
-        ADDRESS,
         PHONE_NUMBER,
     }
 
@@ -37,25 +38,25 @@ public class RegisterUserLogic {
         mapToTextBox.put(Field.FIRST_NAME, RegisterUserController.TextSelect.T1);
         mapToTextBox.put(Field.LAST_NAME, RegisterUserController.TextSelect.T2);
         mapToTextBox.put(Field.PASSWORD, RegisterUserController.TextSelect.T3);
-        mapToTextBox.put(Field.ADDRESS, RegisterUserController.TextSelect.T5);
         mapToTextBox.put(Field.PHONE_NUMBER, RegisterUserController.TextSelect.T6);
         mapToTextBox.put(Field.USERNAME, RegisterUserController.TextSelect.T7);
 
         reg = SceneManager.getI().getController(SceneManager.Type.REGISTER_USER);
         user.serviceList = new Services();
 
-        reg.getButton().setOnAction(e -> {
+        reg.getButton().setOnAction(e -> { //register button action
                 if(validateAll()) {
                     //Add user settings
                     user.firstName = reg.getTextField(RegisterUserController.TextSelect.T1).getText();
                     user.lastName = reg.getTextField(RegisterUserController.TextSelect.T2).getText();
                     user.pass = reg.getTextField(RegisterUserController.TextSelect.T3).getText();
-                    user.address = reg.getTextField(RegisterUserController.TextSelect.T5).getText();
                     user.nr = reg.getTextField(RegisterUserController.TextSelect.T6).getText();
                     user.username = reg.getTextField(RegisterUserController.TextSelect.T7).getText();
                     user.type=reg.getUserType();
                     Register.registerFunction(user);
                 }
+
+                System.out.println(user.address);
         } );
 
 
@@ -71,6 +72,14 @@ public class RegisterUserLogic {
                 System.out.println(user.serviceList.getAssociateService());
             });
         }
+
+        reg.getComboBox().valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue observableValue, String t, String t1) {
+                user.address=t1;
+            }
+        });
+
     }
 
     public boolean validateAll(){
@@ -98,8 +107,6 @@ public class RegisterUserLogic {
             case FIRST_NAME:
             case LAST_NAME:
                 return validateName(str);
-            case ADDRESS:
-                return validateAddress(str);
             case PASSWORD:
                 return validatePass(str);
             case USERNAME:

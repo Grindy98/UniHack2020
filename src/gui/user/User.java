@@ -2,11 +2,20 @@ package gui.user;
 
 import gui.login.Services;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
 
+
 public class User {
+
+    public static final ArrayList<String> cities = new ArrayList<>(Arrays.asList(
+            "citi1",
+            "citi2",
+            "city3"));
+
     public enum Type{
         CLIENT,
         PROVIDER};
