@@ -115,6 +115,7 @@ public class UserController {
         settingsController.getLastNameTextField().setText(userInst.lastName);
         settingsController.getCityComboBox().setValue(userInst.address);
         settingsController.getPhoneTextField().setText(userInst.nr);
+        settingsController.reset();
 
         stage.setTitle("Account settings");
         Scene scene = new Scene(settingsRoot, 600, 600);
