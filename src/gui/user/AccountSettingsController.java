@@ -92,9 +92,6 @@ public class AccountSettingsController {
         return phoneTextField;
     }
 
-    public String getCity() {
-       return cityComboBox.getValue();
-    }
     public String getUserName() {
         return userNameLabel.getText();
     }

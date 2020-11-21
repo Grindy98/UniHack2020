@@ -15,28 +15,27 @@ public class AccountSettingsLogic {
                     controller.getFirstNameTextField().getText(), RegisterUserLogic.Field.FIRST_NAME);
             controller.setFirstNameError(RegisterUserController.getTextErrorLabel(ret));
 
-            UpdateColumn.updateGivenColumn("firstName",controller.getFirstNameTextField().getText() , controller.getUserName());
+            if(ret == RegisterUserLogic.ValidateReturn.VALID)
+                UpdateColumn.updateGivenColumn("firstName",controller.getFirstNameTextField().getText() , controller.getUserName());
         });
         controller.getUpdateLastNameButton().setOnAction(e -> {
             var ret = RegisterUserLogic.checkStringBasedOnType(
                     controller.getLastNameTextField().getText(), RegisterUserLogic.Field.LAST_NAME);
             controller.setLastNameError(RegisterUserController.getTextErrorLabel(ret));
 
-            UpdateColumn.updateGivenColumn("lastName",controller.getLastNameTextField().getText() , controller.getUserName());
+            if(ret == RegisterUserLogic.ValidateReturn.VALID)
+                UpdateColumn.updateGivenColumn("lastName",controller.getLastNameTextField().getText() , controller.getUserName());
         });
         controller.getUpdatePhoneButton().setOnAction(e -> {
             var ret = RegisterUserLogic.checkStringBasedOnType(
                     controller.getPhoneTextField().getText(), RegisterUserLogic.Field.PHONE_NUMBER);
             controller.setPhoneError(RegisterUserController.getTextErrorLabel(ret));
 
-            UpdateColumn.updateGivenColumn("nr",controller.getPhoneTextField().getText() , controller.getUserName());
+            if(ret == RegisterUserLogic.ValidateReturn.VALID)
+                UpdateColumn.updateGivenColumn("nr",controller.getPhoneTextField().getText() , controller.getUserName());
         });
         controller.getUpdateCityButton().setOnAction(e -> {
-            var ret = RegisterUserLogic.checkStringBasedOnType(
-                    controller.getCity(), RegisterUserLogic.Field.PHONE_NUMBER);
-            controller.setPhoneError(RegisterUserController.getTextErrorLabel(ret));
-
-            UpdateColumn.updateGivenColumn("City",controller.getCity() , controller.getUserName());
+            UpdateColumn.updateGivenColumn("City",controller.getCityComboBox().getValue() , controller.getUserName());
         });
     }
 
