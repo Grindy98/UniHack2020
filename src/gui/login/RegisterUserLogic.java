@@ -1,6 +1,8 @@
 package gui.login;
 
 import database.Register;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.CheckBox;
 import gui.sceneUtilities.SceneManager;
 import gui.user.User;
@@ -37,12 +39,18 @@ public class RegisterUserLogic {
         mapToTextBox.put(Field.FIRST_NAME, RegisterUserController.TextSelect.T1);
         mapToTextBox.put(Field.LAST_NAME, RegisterUserController.TextSelect.T2);
         mapToTextBox.put(Field.PASSWORD, RegisterUserController.TextSelect.T3);
-        mapToTextBox.put(Field.ADDRESS, RegisterUserController.TextSelect.T5);
         mapToTextBox.put(Field.PHONE_NUMBER, RegisterUserController.TextSelect.T6);
         mapToTextBox.put(Field.USERNAME, RegisterUserController.TextSelect.T7);
 
         reg = SceneManager.getI().getController(SceneManager.Type.REGISTER_USER);
         user.serviceList = new Services();
+
+        reg.getCity().valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue observableValue, String t, String t1) {
+                user.address=t1;
+            }
+        });
 
         reg.getButton().setOnAction(e -> {
                 if(validateAll()) {
@@ -50,7 +58,6 @@ public class RegisterUserLogic {
                     user.firstName = reg.getTextField(RegisterUserController.TextSelect.T1).getText();
                     user.lastName = reg.getTextField(RegisterUserController.TextSelect.T2).getText();
                     user.pass = reg.getTextField(RegisterUserController.TextSelect.T3).getText();
-                    user.address = reg.getTextField(RegisterUserController.TextSelect.T5).getText();
                     user.nr = reg.getTextField(RegisterUserController.TextSelect.T6).getText();
                     user.username = reg.getTextField(RegisterUserController.TextSelect.T7).getText();
                     user.type=reg.getUserType();
@@ -80,7 +87,7 @@ public class RegisterUserLogic {
             if(ret != ValidateReturn.VALID){
                 ans = false;
             }
-            reg.setTextErrorLabel(e.getValue(), ret);
+            reg.setTextLabel(e.getValue(), RegisterUserController.getTextErrorLabel(ret));
         }
         // Also check password match
         if(reg.getTextField(RegisterUserController.TextSelect.T3).getText().compareTo(
