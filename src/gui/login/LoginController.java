@@ -2,15 +2,14 @@ package gui.login;
 
 import database.GetCityUser;
 import database.LoginDB;
+import database.UserExistence;
 import gui.Main;
 import gui.user.User;
 import gui.user.UserController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import gui.sceneUtilities.SceneManager;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -43,6 +42,10 @@ public class LoginController {
         //get the info for the given username
         userInst = GetCityUser.getUserByUsername(user);
 
+        if (check == false) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "User or password incorrect");
+            a.showAndWait();
+        }
         if (check){
             ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(userInst.username);
             ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setCityLabel(userInst.address);
@@ -50,6 +53,7 @@ public class LoginController {
             fill_services(userInst.address, userInst.type);
             Main.getI().changeSceneOnMainStage(SceneManager.Type.USER);
         }
+        
     }
 
     public void fill_services(String city, gui.user.User.Type type) {
