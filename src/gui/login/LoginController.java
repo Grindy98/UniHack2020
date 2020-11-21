@@ -3,6 +3,7 @@ package gui.login;
 import database.LoginDB;
 import gui.Main;
 import gui.user.User;
+import gui.user.UserController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,6 +27,14 @@ public class LoginController {
         String pw = password.getText();
 
         boolean check = LoginDB.checkLoginData(user, pw);
+
+        if(check){
+            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(user);
+
+            Main.getI().changeSceneOnMainStage(SceneManager.Type.USER);
+
+        }
+
         System.out.println(check);
     }
 
