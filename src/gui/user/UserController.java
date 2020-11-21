@@ -1,5 +1,7 @@
 package gui.user;
 
+import gui.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -49,9 +51,9 @@ public class UserController {
     public void initialize(){
 
         // Set Log out button behaviour
-        logoutButton.setOnAction(e -> {
+        //logoutButton.setOnAction(e -> {
             //SceneManager.getI().loadScene(SceneManager.Type.LOGIN);
-        });
+       // });
         // Set AccSetButton behaviour
         accSetButton.setOnAction((e -> {
             accSetClicked();
@@ -93,10 +95,14 @@ public class UserController {
                 list.getChildren().add(elem.getRoot()));
     }
 
+    public void logoutButtonClicked(){
+        Main.getI().changeSceneOnMainStage(SceneManager.Type.LOGIN);
+    }
+
     private void accSetClicked(){
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader();
-        //loader.setLocation(getClass().getResource("/resources/fxml/client/accountSettings.fxml"));
+        loader.setLocation(getClass().getResource("/resources/user/accountSettings.fxml"));
 
         Parent settingsRoot = null;
         try {

@@ -51,7 +51,7 @@
                 <Region minHeight="10.0" minWidth="10.0" prefHeight="101.0" prefWidth="61.0" HBox.hgrow="ALWAYS" />
                 <VBox alignment="CENTER" prefHeight="101.0" prefWidth="168.0" spacing="10.0">
                     <children>
-                        <Button fx:id="logoutButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="155.0" styleClass="logoutButton" stylesheets="@userStyle.css" text="Log out" />
+                        <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutButtonClicked" prefHeight="35.0" prefWidth="155.0" styleClass="logoutButton" stylesheets="@userStyle.css" text="Log out" />
                         <Button fx:id="accSetButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="155.0" styleClass="accSetButton" stylesheets="@userStyle.css" text="Account Settings" />
                     </children>
                 </VBox>
