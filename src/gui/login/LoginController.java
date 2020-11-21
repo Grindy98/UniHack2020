@@ -23,24 +23,22 @@ public class LoginController {
 
     public void loginButtonClicked(ActionEvent actionEvent) {
 
-        String user = username.getText();
+        String user_name = username.getText();
         String pw = password.getText();
 
-        boolean check = LoginDB.checkLoginData(user, pw);
+        User user = LoginDB.checkLoginData(user_name, pw);
 
-        if(check){
-            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(user);
-
+        if(user != null){
+            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(user.username);
+            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserAddress(user.address);
+            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setCityLabel(user.address);
             Main.getI().changeSceneOnMainStage(SceneManager.Type.USER);
-
         }
-
-        System.out.println(check);
     }
+
+
 
     public void registerButtonClicked(ActionEvent actionEvent){
           Main.getI().changeSceneOnMainStage(SceneManager.Type.REGISTER_USER);
-
-
     }
 }

@@ -1,4 +1,6 @@
 package database;
+import gui.user.User;
+
 import java.sql.*;
 
 public class LoginDB {
@@ -11,8 +13,7 @@ public class LoginDB {
      * @return It returns a boolean value, true if the LoginData is correct
      * and false otherwise
      */
-    public static boolean checkLoginData(String username, String password) {
-
+    public static User checkLoginData(String username, String password) {
         String connectionUrl = "jdbc:sqlserver://" + serverIP + ":1433;"
                 + "database=LoginInformation;"
                 + "user=suru;"
@@ -20,7 +21,7 @@ public class LoginDB {
                 + "encrypt= false;"
                 + "trustServerCertificate=true;"
                 + "loginTimeout=30;";
-
+        User user = null;
         try(
                 Connection conn = DriverManager.getConnection(connectionUrl);
                 Statement stmt = conn.createStatement();
@@ -34,6 +35,7 @@ public class LoginDB {
             String selectStr = "select loginID, pass " +
                     "from [LoginInformation]";
 
+
             ResultSet res = stmt.executeQuery(selectStr);
 
             while(res.next()) {
@@ -41,13 +43,15 @@ public class LoginDB {
                 String Password = res.getString("pass");
 
                 if(password.equals(Password) &&
-                        username.equals(loginID) )
-                    return true;
+                        username.equals(loginID) ) {
+                    user = new User();
+                    user.set_User(loginID);
+                }
             }
 
         }catch(SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return user;
     }
 }

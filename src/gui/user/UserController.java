@@ -58,11 +58,11 @@ public class UserController {
         }));
 
         //we should initialize the name and address using a query to the database
-        userName.setText("John Green");
-        userAddress.setText("street 1, New York");
+        userName.setText("");
+        userAddress.setText("");
 
         //we should initialize the cityLabel also using a query to the database
-        cityLabel.setText("New York");
+        cityLabel.setText("");
 
         listManager = new ArrayList<>();
         addListElement(new ListElementLogic(anchorPane));
@@ -110,5 +110,13 @@ public class UserController {
         Scene scene = new Scene(settingsRoot, 600, 600);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void setUserAddress(String address) {
+        userAddress.setText(address);
+    }
+
+    public void setCityLabel(String address) {
+        cityLabel.setText(address);
     }
 }
