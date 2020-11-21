@@ -7,10 +7,8 @@ import gui.user.User;
 import gui.user.UserController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import gui.sceneUtilities.SceneManager;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -36,6 +34,10 @@ public class LoginController {
         boolean check = LoginDB.checkLoginData(user, pw);
         User userInst = GetCityUser.getUserByUsername(user);
 
+        if (check == false) {
+            Alert a = new Alert(Alert.AlertType.ERROR, "User or password incorrect");
+            a.showAndWait();
+        }
         if (check){
             ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(userInst.username);
             ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setCityLabel(userInst.address);
