@@ -29,6 +29,8 @@ public class Main extends Application {
 
         stage.setScene(SceneManager.getI().getScene(Type.LOGIN));
         stage.show();
+
+        RegisterUserLogic r = new RegisterUserLogic();
     }
 
     public static void main(String[] args){
