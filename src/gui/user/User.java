@@ -20,11 +20,6 @@ public class User {
         CLIENT,
         PROVIDER};
 
-    public static final ArrayList<String> cities = new ArrayList<>(Arrays.asList(
-            "citi1",
-            "citi2",
-            "city3"));
-
     public String firstName, lastName;
     public String pass;
     public String address;
