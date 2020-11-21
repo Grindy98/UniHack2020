@@ -1,6 +1,7 @@
 package gui.user;
 
 import gui.Main;
+import gui.login.Services;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -62,13 +63,6 @@ public class UserController {
         cityLabel.setText("New York");
 
         listManager = new ArrayList<>();
-        addListElement(new ListElementLogic(anchorPane));
-        addListElement(new ListElementLogic(anchorPane));
-        addListElement(new ListElementLogic(anchorPane));
-        addListElement(new ListElementLogic(anchorPane));
-        addListElement(new ListElementLogic(anchorPane));
-        addListElement(new ListElementLogic(anchorPane));
-        addListElement(new ListElementLogic(anchorPane));
     }
 
     public void setUserName(String userName) {
@@ -79,14 +73,14 @@ public class UserController {
 
     public void setRoleLabel(String userRole) {this.userRole.setText(userRole);}
 
-    private void addListElement(ListElementLogic elem){
-        listManager.add(elem);
-        updateGUIList();
-    }
-    protected void deleteListElement(ListElementLogic elem){
-        listManager.remove(elem);
-        updateGUIList();
-    }
+//    private void addListElement(ListElementLogic elem){
+//        listManager.add(elem);
+//        updateGUIList();
+//    }
+//    protected void deleteListElement(ListElementLogic elem){
+//        listManager.remove(elem);
+//        updateGUIList();
+//    }
 
     private void updateGUIList(){
         list.getChildren().clear();
@@ -115,5 +109,20 @@ public class UserController {
         Scene scene = new Scene(settingsRoot, 600, 600);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void addNewElement(User user, Services.Type service){
+        ListElementLogic elem = new ListElementLogic(anchorPane, user, service);
+        listManager.add(elem);
+        updateGUIList();
+    }
+
+    public void reset(){
+        listManager.clear();
+        updateGUIList();
+    }
+
+    public List<ListElementLogic> getListElements(){
+        return listManager;
     }
 }

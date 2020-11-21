@@ -2,8 +2,10 @@ package gui;
 
 import gui.login.RegisterUserController;
 import gui.login.RegisterUserLogic;
+import gui.login.Services;
 import gui.sceneUtilities.SceneManager;
 import gui.user.User;
+import gui.user.UserController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -27,10 +29,6 @@ public class Main extends Application {
 
         stage.setScene(SceneManager.getI().getScene(Type.LOGIN));
         stage.show();
-
-        RegisterUserLogic r = new RegisterUserLogic();
-
-
     }
 
     public static void main(String[] args){
