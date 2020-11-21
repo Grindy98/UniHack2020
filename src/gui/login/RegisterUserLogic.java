@@ -93,6 +93,7 @@ public class RegisterUserLogic {
         return ans;
     }
 
+    //helper function
     public static ValidateReturn checkStringBasedOnType(String str, Field t){
         switch(t){
             case FIRST_NAME:

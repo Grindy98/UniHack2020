@@ -13,7 +13,7 @@
         <Region prefHeight="400.0" prefWidth="69.0" HBox.hgrow="ALWAYS" />
         <VBox alignment="CENTER" prefHeight="400.0" prefWidth="146.0" spacing="30.0">
             <children>
-                <Region prefHeight="20.0" prefWidth="141.0" />
+                <Region prefHeight="0.0" prefWidth="123.0" />
                 <Label text="First Name:">
                     <font>
                         <Font size="18.0" />
@@ -34,9 +34,10 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
+            <Region prefHeight="0.0" prefWidth="123.0" />
             </children>
         </VBox>
-        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="201.0" spacing="30.0" HBox.hgrow="ALWAYS">
+        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="201.0" spacing="5.0" HBox.hgrow="ALWAYS">
             <children>
                 <HBox alignment="CENTER" prefHeight="26.0" prefWidth="196.0" spacing="10.0">
                     <children>
@@ -53,19 +54,36 @@
                     </children>
                 </HBox>
                 <TextField fx:id="firstNameTextField" prefHeight="27.0" prefWidth="196.0" />
+            <Label fx:id="firstNameWarning" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
                 <TextField fx:id="nameTextField" />
+            <Label fx:id="nameWarning" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
                 <TextField fx:id="cityTextField" />
+            <Region prefHeight="19.0" prefWidth="178.0" VBox.vgrow="NEVER" />
                 <TextField fx:id="phoneTextField" />
+            <Label fx:id="phoneWarning" text="Label">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
             </children>
         </VBox>
         <Region prefHeight="400.0" prefWidth="48.0" HBox.hgrow="ALWAYS" />
         <VBox alignment="CENTER" prefHeight="400.0" prefWidth="141.0" spacing="30.0">
             <children>
-                <Region prefHeight="25.0" prefWidth="107.0" />
-                <Button fx:id="updateFirstNameButton" mnemonicParsing="false" text="Update first name" />
-                <Button fx:id="updateNameButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update name" />
-                <Button fx:id="updateCityButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Update city" />
-                <Button fx:id="updatePhoneButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update phone" />
+                <Region prefHeight="0.0" prefWidth="118.0" />
+                <Button mnemonicParsing="false" text="Update first name" />
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update name" />
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Update city" />
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" text="Update phone" />
+            <Region prefHeight="0.0" prefWidth="118.0" />
             </children>
         </VBox>
         <Region prefHeight="400.0" prefWidth="132.0" HBox.hgrow="ALWAYS" />

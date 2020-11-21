@@ -108,6 +108,7 @@ public class UserController {
 
         //get the controller so we can initialize some fields
         AccountSettingsController settingsController = loader.getController();
+        //AccountSettingsLogic settingsLogic = new AccountSettingsLogic(settingsController);
 
         //get user instance so we can initialize the settings window
         User userInst = GetCityUser.getUserByUsername(userName.getText());

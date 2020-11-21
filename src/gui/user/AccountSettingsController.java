@@ -18,10 +18,34 @@ public class AccountSettingsController {
     @FXML
     private Label userNameLabel;
     @FXML
-    private Button updateFirstNameButton, updateNameButton, updateCityButton, updatePhoneButton;
+    private Button updateFirstNameButton;
+    @FXML
+    private Button updateNameButton;
+    @FXML
+    private Button updateCityButton;
+    @FXML
+    private Button updatePhoneButton;
+    @FXML
+    private Label firstNameWarning;
+    @FXML
+    private Label nameWarning;
+    @FXML
+    private Label phoneWarning;
 
-    public AccountSettingsController(){
+    public Button getUpdateFirstNameButton() {
+        return updateFirstNameButton;
+    }
 
+    public Button getUpdateNameButton() {
+        return updateNameButton;
+    }
+
+    public Button getUpdateCityButton() {
+        return updateCityButton;
+    }
+
+    public Button getUpdatePhoneButton() {
+        return updatePhoneButton;
     }
 
     public void setFirstNamePrompt(String firstName){
