@@ -50,7 +50,7 @@
                     </font>
                 </Label>
                 <Button fx:id="updateLastNameButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" text="Update last name" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                <Label text="City:" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                <Label text="City:" GridPane.columnIndex="1" GridPane.rowIndex="6" >
                     <font>
                         <Font size="18.0" />
                     </font>

@@ -1,5 +1,7 @@
 package gui.user;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,9 +10,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.sql.SQLException;
+
 public class AccountSettingsController {
-
-
 
     @FXML
     private TextField firstNameTextField;
@@ -86,6 +88,16 @@ public class AccountSettingsController {
         return phoneTextField;
     }
 
+    public TextField getTextField() {
+        return phoneTextField;
+    }
+
+    public String getCity() {
+       return cityComboBox.getValue();
+    }
+    public String getUserName() {
+        return userNameLabel.getText();
+    }
     public ComboBox<String> getCityComboBox(){
         return cityComboBox;
     }
