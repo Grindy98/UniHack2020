@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="613.0" prefWidth="981.0" style="-fx-background-color: #1a1b1c;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.login.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #282828;" stylesheets="@login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.login.LoginController">
     <children>
-        <AnchorPane layoutX="556.0" layoutY="31.0" prefHeight="557.0" prefWidth="400.0" style="-fx-background-color: d07361;">
+        <AnchorPane layoutX="573.0" layoutY="21.0" prefHeight="557.0" prefWidth="400.0" style="-fx-background-color: d07361;">
             <children>
                 <TextField fx:id="username" layoutX="65.0" layoutY="173.0" prefHeight="34.0" prefWidth="270.0" promptText="username">
                     <font>
@@ -23,24 +23,24 @@
                         <Font size="25.0" />
                     </font>
                 </PasswordField>
-                <Button layoutX="126.0" layoutY="440.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="40.0" prefWidth="149.0" style="-fx-background-color: d8a764; -fx-background-radius: 50px;" text="Log In">
+                <Button layoutX="126.0" layoutY="440.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="40.0" prefWidth="149.0" text="Log In">
                     <font>
                         <Font size="28.0" />
                     </font>
                 </Button>
-            <Label layoutX="101.0" layoutY="55.0" prefHeight="50.0" prefWidth="198.0" text="Easy Services">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="58.0" prefHeight="50.0" prefWidth="233.0" text="Easy Services" textAlignment="CENTER">
                <font>
-                  <Font size="34.0" />
+                  <Font name="Georgia" size="37.0" />
                </font>
             </Label>
             </children>
         </AnchorPane>
-      <ImageView fitHeight="401.0" fitWidth="515.0" layoutX="24.0" layoutY="31.0" pickOnBounds="true">
+      <ImageView fitHeight="401.0" fitWidth="515.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true">
          <image>
             <Image url="@boost-creativity-virtual-CONTENT-2020-750x421.jpg" />
          </image>
       </ImageView>
-        <Button fx:id="registerButton" layoutX="176.0" layoutY="463.0" mnemonicParsing="false" onAction="#registerButtonClicked" prefHeight="73.0" prefWidth="212.0" style="-fx-background-color: d8a764; -fx-background-radius: 50px;" text="Register">
+        <Button fx:id="registerButton" layoutX="172.0" layoutY="471.0" mnemonicParsing="false" onAction="#registerButtonClicked" prefHeight="73.0" prefWidth="212.0" text="Register">
             <font>
                 <Font size="40.0" />
             </font>

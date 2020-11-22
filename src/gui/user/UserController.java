@@ -1,6 +1,7 @@
 package gui.user;
 
 import database.GetCityUser;
+import database.LoginDB;
 import gui.Main;
 import gui.login.LoginController;
 import gui.login.Services;
@@ -68,15 +69,6 @@ public class UserController {
 
     public void setRoleLabel(String userRole) {this.userRole.setText(userRole);}
 
-//    private void addListElement(ListElementLogic elem){
-//        listManager.add(elem);
-//        updateGUIList();
-//    }
-//    protected void deleteListElement(ListElementLogic elem){
-//        listManager.remove(elem);
-//        updateGUIList();
-//    }
-
     private void updateGUIList(){
         list.getChildren().clear();
         listManager.forEach((elem) ->
@@ -107,7 +99,8 @@ public class UserController {
         AccountSettingsLogic settingsLogic = new AccountSettingsLogic(settingsController);
 
         //get the user info so we can set the prompts
-        User userInst = ((LoginController)SceneManager.getI().getController(SceneManager.Type.LOGIN)).getUserInst();
+        LoginController loginController = SceneManager.getI().getController(SceneManager.Type.LOGIN);
+        User userInst = GetCityUser.getUserByUsername(loginController.getUserInst().username);
         
         //set the prompt texts
         settingsController.setUserNameLabel(userInst.username);
@@ -136,5 +129,12 @@ public class UserController {
 
     public List<ListElementLogic> getListElements(){
         return listManager;
+    }
+
+    public void resetUserProperties(User userInst){
+        setUserName(userInst.username);
+        setCityLabel(userInst.address);
+        setRoleLabel(LoginController.getTypeAsString(userInst.type));
+        LoginController.fill_services(userInst.address, userInst.type);
     }
 }

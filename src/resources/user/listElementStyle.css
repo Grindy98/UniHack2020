@@ -1,25 +1,24 @@
 .gridPane{
-    -fx-background-color: #33ab33;
-    -fx-background-radius: 30.0;
+    -fx-background-color: derive(#d07361,-20%);
+    -fx-background-radius: 20px;
 }
 
 .pane{
-    -fx-background-radius: 30.0;
-    -fx-background-color: #33ab33;
+    -fx-background-radius: 20px;
+    -fx-background-color: #282828;
     -fx-border-width: 0;
 }
-
-.seeInfoButton{
-    -fx-background-radius: 15.0;
+.button{
+    -fx-background-color: #d8a764;
+    -fx-background-radius: 50px;
 }
 
-.button:pressed:hover{
+.button:pressed:hover {
     -fx-scale-y: 0.9;
     -fx-scale-x: 0.9;
 }
 
-.button:hover{
-    -fx-background-color: #13139f;
-    -fx-text-fill: white;
+.button:hover {
+    -fx-background-color: #cbc4b8;
     -fx-scale-y: 1.1;
 }

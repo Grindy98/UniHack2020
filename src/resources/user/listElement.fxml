@@ -6,24 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="100.0" minWidth="200.0" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: white;" stylesheets="@listElementStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.user.ListElementController">
+<AnchorPane minHeight="100.0" minWidth="-Infinity" prefHeight="100.0" prefWidth="385.0" styleClass="anchor-pane" stylesheets="@listElementStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.user.ListElementController">
     <children>
-        <Pane fx:id="pane" layoutX="6.0" layoutY="6.0" prefHeight="89.0" prefWidth="190.0" styleClass="pane" stylesheets="@listElementStyle.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-            <children>
-                <VBox>
-                    <children>
-                        <HBox spacing="5.0" />
-                    </children>
-                </VBox>
-            </children>
-        </Pane>
-        <GridPane fx:id="gridPane" hgap="2.0" styleClass="gridPane" stylesheets="@listElementStyle.css" vgap="2.0" AnchorPane.bottomAnchor="8.799999999999997" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Pane fx:id="pane" layoutX="6.0" layoutY="6.0" prefHeight="89.0" prefWidth="190.0" styleClass="pane" stylesheets="@listElementStyle.css" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+        <GridPane fx:id="gridPane" hgap="2.0" styleClass="gridPane" stylesheets="@listElementStyle.css" vgap="2.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="10.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="48.8" />
                 <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="127.19999999999999" />

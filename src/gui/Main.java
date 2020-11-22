@@ -29,6 +29,7 @@ public class Main extends Application {
 
         stage.setScene(SceneManager.getI().getScene(Type.LOGIN));
         stage.setResizable(false);
+        stage.setTitle("Easy Services");
         stage.show();
 
         RegisterUserLogic r = new RegisterUserLogic();

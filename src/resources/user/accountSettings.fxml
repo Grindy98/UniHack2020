@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane style="-fx-background-color: #857f87;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.user.AccountSettingsController">
+<AnchorPane styleClass="anchor-pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.user.AccountSettingsController">
    <children>
       <GridPane prefHeight="389.0" prefWidth="553.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -96,4 +97,8 @@
          </children>
       </GridPane>
    </children>
+   <stylesheets>
+      <URL value="@../login/registerUser.css" />
+      <URL value="@seeDetails.css" />
+   </stylesheets>
 </AnchorPane>

@@ -1,13 +1,15 @@
 .accSetButton{
-    -fx-background-color: #111180;
-    -fx-text-fill: #ffeded;
-    -fx-background-radius: 15px;
+    -fx-background-color: #d8a764;
+    -fx-text-fill: #000000;
+    -fx-font-size: 16px;
+    -fx-background-radius: 50px;
 }
 
 .logoutButton{
-    -fx-background-color: #111180;
-    -fx-text-fill: #ffeded;
-    -fx-background-radius: 15px;
+    -fx-background-color: #d8a764;
+    -fx-text-fill: #000000;
+    -fx-font-size: 16px;
+    -fx-background-radius: 50px;
 }
 
 .button:pressed:hover {
@@ -16,7 +18,7 @@
 }
 
 .button:hover {
-    -fx-background-color: #3333c4;
+    -fx-background-color: #cbc4b8;
     -fx-scale-y: 1.1;
 }
 
@@ -31,4 +33,19 @@
 .scrollPane{
     -fx-border-width: 0;
     -fx-background-color: transparent;
+    -fx-background : #d07361;
+}
+
+.scroll-bar:vertical{
+    -fx-background-color: #d8a764;
+    -fx-background-radius: 20px;
+}
+
+.scroll-bar:vertical .thumb{
+    -fx-background-color: #282828;
+    -fx-background-radius: 20px;
+}
+
+.region_separator{
+    -fx-background-color: derive(#d07361,-20%);
 }

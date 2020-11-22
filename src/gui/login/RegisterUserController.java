@@ -144,9 +144,6 @@ public class RegisterUserController<serviceBoxes> {
         for (Services.Type it: Services.Type.values()) {
             CheckBox b = new CheckBox(it.label);
             b.setPadding(new Insets(10,10,10,10));
-            b.setStyle(
-                    "-fx-font-size: " + "18;" +
-                    "-fx-font-weight: " + "bold;");
             arrMap.put(it, b);
         }
         box.getChildren().setAll(arrMap.values());

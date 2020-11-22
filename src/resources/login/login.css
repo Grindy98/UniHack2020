@@ -1,0 +1,19 @@
+.button{
+    -fx-background-color: #d8a764;
+    -fx-background-radius: 50px;
+}
+
+.button:pressed:hover {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
+
+.button:hover {
+    -fx-background-color: #cbc4b8;
+    -fx-scale-y: 1.1;
+}
+
+.text-field{
+    -fx-background-color: #282828;
+    -fx-text-fill: #ffffff;
+}

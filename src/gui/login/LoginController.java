@@ -54,16 +54,13 @@ public class LoginController {
             a.showAndWait();
         }
         if (check){
-            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setUserName(userInst.username);
-            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setCityLabel(userInst.address);
-            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).setRoleLabel(getTypeAsString(userInst.type));
-            fill_services(userInst.address, userInst.type);
+            ((UserController)SceneManager.getI().getController(SceneManager.Type.USER)).resetUserProperties(userInst);
             Main.getI().changeSceneOnMainStage(SceneManager.Type.USER);
         }
 
     }
 
-    public void fill_services(String city, gui.user.User.Type type) {
+    public static void fill_services(String city, gui.user.User.Type type) {
         String connectionUrl = "jdbc:sqlserver://" + serverIP + ":1433;"
                 + "database=LoginInformation;"
                 + "user=suru;"
@@ -103,7 +100,7 @@ public class LoginController {
         }
     }
 
-    public String getTypeAsString(User.Type type){
+    public static String getTypeAsString(User.Type type){
         if (type == User.Type.CLIENT) {
             return "Client";
         }

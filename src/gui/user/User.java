@@ -28,8 +28,6 @@ public class User {
     public Type type;
     public String username;
 
-
-
     public int getType() {
         if(type == Type.CLIENT)
             return 0;
